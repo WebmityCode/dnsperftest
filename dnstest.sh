@@ -80,7 +80,7 @@ for d in $DOMAINS2TEST; do
     totaldomains=$((totaldomains + 1))
     printf "%-8s" "$totaldomains"
 done
-printf "%-8s" "Average  IP Address"
+printf "%-8s" "Average    IP Address"
 echo ""
 
 
@@ -104,7 +104,10 @@ for p in $NAMESERVERS $providerstotest; do
     done
     avg=$(bc -lq <<< "scale=2; $ftime/$totaldomains")
 
-    echo "  $avg    $pip"
+    printf "%-8s" "$avg ms"
+    printf "%-18s" "   $pip"
+    echo ""
+    
 done
 
 

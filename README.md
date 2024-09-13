@@ -33,19 +33,19 @@ You need to install bc and dig.
 
 For Ubuntu:
 
-```console
+```shell
  $ sudo apt-get install bc dnsutils
 ```
 
 For macOS using homebrew:
 
-```console
+```shell
  $ brew install bc bind
 ```
 
 # Utilization
 
-```console
+```shell
  $ git clone --depth=1 https://github.com/cleanbrowsing/dnsperftest/
  $ cd dnsperftest
  $ bash ./dnstest.sh 
@@ -64,7 +64,7 @@ comodo         21 ms   22 ms   22 ms   22 ms   22 ms   22 ms   22 ms   21 ms   2
 
 To sort with the fastest first, add `sort -k 22 -n` at the end of the command:
 
-```console
+```shell
   $ bash ./dnstest.sh |sort -k 22 -n
                test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
 cloudflare     1 ms    1 ms    1 ms    4 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.30
@@ -81,7 +81,7 @@ adguard        199 ms  210 ms  200 ms  201 ms  202 ms  202 ms  199 ms  200 ms  1
 
 To test using the IPv6 addresses, add the IPv6 option:
 
-```console
+```shell
   $ bash ./dnstest.sh ipv6| sort -k 22 -n
                      test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
 cleanbrowsing-v6     1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.00
@@ -96,7 +96,7 @@ yandex-v6            177 ms  178 ms  178 ms  179 ms  179 ms  178 ms  179 ms  178
 ```
 
 To test both IPv6 and IPv4, add the "all" option:
-```console
+```shell
   $ bash ./dnstest.sh all| sort -k 22 -n
                      test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
 cleanbrowsing        1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.00

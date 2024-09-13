@@ -75,12 +75,12 @@ fi
 DOMAINS2TEST=$(head top-domains.txt)
 
 totaldomains=0
-printf "%-21s" ""
+printf "%-21s" "DNS Name / Tests >"
 for d in $DOMAINS2TEST; do
     totaldomains=$((totaldomains + 1))
-    printf "%-8s" "test$totaldomains"
+    printf "%-8s" "$totaldomains"
 done
-printf "%-8s" "Average"
+printf "%-8s" "Average  IP Address"
 echo ""
 
 
@@ -104,7 +104,7 @@ for p in $NAMESERVERS $providerstotest; do
     done
     avg=$(bc -lq <<< "scale=2; $ftime/$totaldomains")
 
-    echo "  $avg"
+    echo "  $avg    $pip"
 done
 
 

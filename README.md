@@ -3,19 +3,29 @@
 Shell script to test the performance of the most popular DNS resolvers from your location.
 
 Includes by default:
- * CloudFlare 1.1.1.1
- * Level3 4.2.2.1
- * Google 8.8.8.8
- * Quad9 9.9.9.9
- * Freenom 80.80.80.80
- * OpenDNS
- * Norton
- * CleanBrowsing
- * Yandex
- * AdGuard
- * Neustar
- * Comodo
- * NextDNS
+
+| Resolver            | IP v4           |
+|---------------------|-----------------|
+| CloudFlare          | 1.1.1.1         |
+| Level3              | 4.2.2.1         |
+| Google              | 8.8.8.8         |
+| Quad9               | 9.9.9.9         |
+| Freenom             | 80.80.80.80     |
+| OpenDNS             | 208.67.222.123  |     
+| Norton              | 199.85.126.20   |    
+| CleanBrowsing       | 185.228.168.168 | 
+| Yandex              | 77.88.8.7       |
+| AdGuard             | 94.140.14.14    |
+| AdGuard - No Filter | 94.140.14.140   |
+| AdGuard - Family    | 94.140.14.15    |
+| Neustar             | 156.154.70.3    |
+| Comodo              | 8.26.56.26      |
+| NextDNS             | 45.90.28.202    |
+| dns.watch           | 84.200.69.80    |
+| verisign            | 64.6.65.6       |
+| SafeDNS             | 195.46.39.39    |
+| dnsfilter           | 103.247.36.101  |
+
 
 # Required 
 
@@ -23,19 +33,19 @@ You need to install bc and dig.
 
 For Ubuntu:
 
-```
+```console
  $ sudo apt-get install bc dnsutils
 ```
 
 For macOS using homebrew:
 
-```
+```console
  $ brew install bc bind
 ```
 
 # Utilization
 
-``` 
+```console
  $ git clone --depth=1 https://github.com/cleanbrowsing/dnsperftest/
  $ cd dnsperftest
  $ bash ./dnstest.sh 
@@ -54,7 +64,7 @@ comodo         21 ms   22 ms   22 ms   22 ms   22 ms   22 ms   22 ms   21 ms   2
 
 To sort with the fastest first, add `sort -k 22 -n` at the end of the command:
 
-```
+```console
   $ bash ./dnstest.sh |sort -k 22 -n
                test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
 cloudflare     1 ms    1 ms    1 ms    4 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.30
@@ -71,7 +81,7 @@ adguard        199 ms  210 ms  200 ms  201 ms  202 ms  202 ms  199 ms  200 ms  1
 
 To test using the IPv6 addresses, add the IPv6 option:
 
-```
+```console
   $ bash ./dnstest.sh ipv6| sort -k 22 -n
                      test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
 cleanbrowsing-v6     1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.00
@@ -86,7 +96,7 @@ yandex-v6            177 ms  178 ms  178 ms  179 ms  179 ms  178 ms  179 ms  178
 ```
 
 To test both IPv6 and IPv4, add the "all" option:
-```
+```console
   $ bash ./dnstest.sh all| sort -k 22 -n
                      test1   test2   test3   test4   test5   test6   test7   test8   test9   test10  Average 
 cleanbrowsing        1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms    1 ms      1.00

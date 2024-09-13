@@ -17,10 +17,13 @@ PROVIDERSV4="
 199.85.126.20#norton
 185.228.168.168#cleanbrowsing
 77.88.8.7#yandex
-176.103.130.132#adguard
 156.154.70.3#neustar
 8.26.56.26#comodo
 45.90.28.202#nextdns
+84.200.69.80#dns.watch
+64.6.65.6#verisign
+195.46.39.39#safedns
+103.247.36.101#dnsfilter
 "
 
 PROVIDERSV6="
